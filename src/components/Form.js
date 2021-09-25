@@ -9,7 +9,7 @@ function Form() {
     return (
         <>
             <Text mt="30" size="sm">Title</Text>
-            <Input placeholder="Enter snip title here" mb="10"/>
+            <Input placeholder="Enter snip title here" mb="10" />
             <Text size="sm">Content</Text>
             <Textarea placeholder="Input your code here" size="md" resize={resize} minHeight="400px"/>
             <Button mt="5" variant="solid" colorScheme="teal" loadingText="Submitting">Submit</Button>
