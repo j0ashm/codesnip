@@ -6,7 +6,7 @@ function Header() {
         <Flex borderBottom="1px">
             <Box p="3" >
                 <Heading size="lg">codeSNIP</Heading>
-                <Text size="md" pt="2">An open-source recreation of hastebin.</Text>
+                <Text size="md" pt="2">An open-source text-uploading service.</Text>
             </Box>
         </Flex>
     )
