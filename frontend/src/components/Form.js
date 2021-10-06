@@ -26,7 +26,7 @@ function Form() {
 
     return (
         <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} autoComplete="off">
                 <FormControl isRequired mt={2}>
                     <FormLabel>Title</FormLabel>
                     <Input placeholder="Enter title here" size="md" onChange={event => setTitle(event.currentTarget.value)} value={title}/>
