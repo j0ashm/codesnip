@@ -4,6 +4,7 @@ import { Input } from '@chakra-ui/input'
 import { Text } from '@chakra-ui/layout'
 import { Button } from '@chakra-ui/button'
 import { useColorModeValue } from '@chakra-ui/color-mode'
+import { CircularProgress } from '@chakra-ui/progress'
 import {
     FormControl,
     FormLabel,
@@ -13,11 +14,13 @@ function Form() {
     const [resize, setResize] = React.useState('none');
     const [title, setTitle] = React.useState('');
     const [content, setContent] = React.useState('');
+    const [loadingStatus, setLoadingStatus] = React.useState(false)
 
     const buttonColors = useColorModeValue('green', 'teal');
 
     function onSubmit(evt) {
         evt.preventDefault()
+        setLoadingStatus(true)
         console.log(`Title: ${title}\nContent: ${content}`)
     }
 
@@ -32,7 +35,9 @@ function Form() {
                     <FormLabel>Snippet</FormLabel>
                     <Textarea placeholder="Input snip here" size="md" resize={resize} minHeight="400px" onChange={event => setContent(event.currentTarget.value)} value={content} />
                 </FormControl>
-                <Button mt={5} mb={5} variant="solid" colorScheme={buttonColors} type="submit">Submit</Button>
+                <Button mt={5} mb={5} variant="solid" colorScheme={buttonColors} type="submit">
+                    {loadingStatus ? (<CircularProgress isIndeterminate size="24px" />) : ('Submit')}
+                </Button>
             </form>
         </>
     )
